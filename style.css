@@ -1,0 +1,220 @@
+/* para que seleccione todo el body puse el * para quitar margenes y pading por defecto y tener un lienzo en blanco */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: hwb(0 100% 0%);
+}
+
+header {
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5em);
+    margin-bottom: 1px;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    max-width: 45rem;
+    line-height: 1;
+  }
+
+  .video-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+ transform: scale(2.4);
+  /*hace zoom al video por dento de la caja (video container) */
+  transform-origin: center;
+  /*indica desde donde hace el zoom*/
+}
+
+.seccion-pantalla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 5px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/*tuve que cambiar la clase a la ultima seccion para poder editarla aparte de las demas y asi bajar el footer*/
+.seccion-pantalla-ultima  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 5px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative
+}
+
+.footer-caja {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;}
+
+.logo-gh-caja {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo-gh {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.9);
+}
+
+    
+
+
+h2 {
+  text-transform: capitalize;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+}
+
+p {
+  font-size: clamp(1em, 2.3vw, 1.25rem);
+  max-width: 45rem;
+  line-height: 1.2;
+  margin: 0 auto;
+  text-align: center;
+}
+
+img {
+  width: min(300px, 30vh);
+  height: min(300px, 30vh);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu-hamburguesa {
+  position: fixed;
+  top: 35px;
+  left: 35px;
+  width: 30px;
+  height: 30px;
+  z-index: 1000;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+}
+
+.menu-movil  {
+    text-transform: capitalize;
+    text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(221, 80%, 44%, 0.815);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  font-size: 3rem;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: color 0.3s ease;
+}
+
+.menu-activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: #4888ff;
+}
+
+#boton-audio {
+  position: fixed;
+  bottom: 6px;
+  right: 6px;
+  z-index: 1000;
+  background-color: hwb(212 29% 9%);
+  color: #fff;
+  border: 2px solid #000;
+  padding: 2px 2px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 5rem;
+  height: 2.5rem;
+
+}
+ 
